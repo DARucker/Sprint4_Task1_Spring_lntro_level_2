@@ -17,11 +17,11 @@ public class HelloWorldController {
 
     private static Logger LOG = LoggerFactory.getLogger(HelloWorldController.class);
     @GetMapping("/HelloWorld")
-    public String saluda(@RequestParam(name="name", required = false, defaultValue = "unknown") String name, Model model){
+    public String greeting(@RequestParam(name="name", required = false, defaultValue = "unknown") String name, Model model){
         LOG.info("Verificacion funcionamiento metodo saluda punto 1");
         model.addAttribute("name", name);
         LOG.info("Verificacion funcionamiento metodo saluda punto 2");
-        return "resources\\templates\\greeting";
+        return "greeting";
     }
 
     @GetMapping(value =  {"/HelloWorld2", "/HelloWorld2/{name}"})
